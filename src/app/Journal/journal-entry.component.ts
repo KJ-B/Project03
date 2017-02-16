@@ -1,0 +1,1 @@
+journa-entry.component.ts
