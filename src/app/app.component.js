@@ -9,26 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var JournalEntry = (function () {
-    function JournalEntry() {
-    }
-    return JournalEntry;
-}());
-exports.JournalEntry = JournalEntry;
-var JournalEntries = [
-    { id: 0, name: 'this is a post with a long title' },
-    { id: 1, name: 'tester jermey' },
-    { id: 2, name: 'jjhkhkjhkjhk' },
-    { id: 3, name: 'afdadfafdadf' },
-    { id: 4, name: 'jjhkhkjhkjhk' }
+var journalentry_1 = require('./Journal/journalentry');
+var JOURNALENTRIES = [
+    { id: 0, title: 'this is a post with a long title' },
+    { id: 1, title: 'tester jermey' },
+    { id: 2, title: 'jjhkhkjhkjhk' },
+    { id: 3, title: 'afdadfafdadf' },
+    { id: 4, title: 'jjhkhkjhkjhk' }
 ];
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'INHABITENT JOURNAL';
-        this.selectedJournalEntry = JournalEntry;
+        this.selectedJournalEntry = journalentry_1.JournalEntry;
     }
     AppComponent.prototype.onSelect = function (journalEntry) {
-        this.selectedJournalEntry = JournalEntry;
+        this.selectedJournalEntry = journalentry_1.JournalEntry;
     };
     AppComponent = __decorate([
         core_1.Component({
