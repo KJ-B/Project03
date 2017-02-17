@@ -2,13 +2,17 @@ import { Component } from '@angular/core';
 import { JournalEntry }   from './Journal/journalentry';
 import { JournalService } from './Journal/journal.service';
 
+export class Journal {
+  id: number;
+  name: string;
+}
 
 const JournalEntries: JournalEntry [] = [
-	{ id: 0, title: 'this is a post with a long title' },
-	{ id: 1, title: 'tester jermey'                    },
-	{ id: 2, title: 'jjhkhkjhkjhk'                     },
-	{ id: 3, title: 'afdadfafdadf'                     },
-	{ id: 4, title: 'jjhkhkjhkjhk'                     }
+	{ ID: 0, title: 'this is a post with a long title' },
+	{ ID: 1, title: 'tester jermey'                    },
+	{ ID: 2, title: 'jjhkhkjhkjhk'                     },
+	{ ID: 3, title: 'afdadfafdadf'                     },
+	{ ID: 4, title: 'jjhkhkjhkjhk'                     }
 ];
 
 
@@ -34,8 +38,7 @@ const JournalEntries: JournalEntry [] = [
     </div>
   `,
 
-})	
-
+})
 export class AppComponent {
   title = 'INHABITENT JOURNAL';
   journalEntry: JournalEntry;
