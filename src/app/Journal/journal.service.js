@@ -11,8 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-// model data
-var journal_1 = require('./journal');
 var JournalService = (function () {
     function JournalService(http) {
         this.http = http;
@@ -30,25 +28,26 @@ var JournalService = (function () {
     ;
     JournalService.prototype.getJournals = function () {
         var _this = this;
+        var JournalArr = "";
         return this.http.get(this.journalUrl).toPromise()
             .then(function (response) {
             var returnedResponse = response.json();
-            console.log("***** in journal.service.ts *****");
-            var compareKeys = function (a, b) {
-                var aKeys = Object.keys(a).sort();
-                var bKeys = Object.keys(b).sort();
-                return JSON.stringify(aKeys).toLowerCase() === JSON.stringify(bKeys).toLowerCase();
-            };
-            var keyToCompare = new journal_1.Journal();
-            console.log(keyToCompare);
-            for (var prop in returnedResponse) {
-                var currentObject = returnedResponse[prop];
+            console.log(returnedResponse);
+            /*let compareKeys = (a,b) => {
+                    let aKeys = Object.keys(a).sort();
+                    let bKeys = Object.keys(b).sort();
+                    return JSON.stringify(aKeys).toLowerCase() === JSON.stringify(bKeys).toLowerCase();
+                };
+                let keyToCompare = new Journal();
+                console.log(keyToCompare);
+                for (let prop in returnedResponse){
+                    let currentObject:Journal = <Journal>returnedResponse[prop];
                 // console.log(currentObject);
                 // console.log( compareKeys(currentObject, keyToCompare) );
-                if (compareKeys(currentObject, keyToCompare)) {
-                    _this.JournalArr.push(currentObject);
+                if (compareKeys(currentObject, keyToCompare)){
+                    this.JournalArr.push(currentObject);
                 }
-            }
+            }*/
             // console.log(this.JournalArr);
             // console.log(response.json() as Journal[]);
             console.log("***** in journal.service.ts *****");

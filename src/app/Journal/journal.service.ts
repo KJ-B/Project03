@@ -27,26 +27,27 @@ export class JournalService {
 	};
 
 	getJournals(): Promise<Journal[]> {
+        let JournalArr = "";
 		return this.http.get(this.journalUrl).toPromise()
 		.then(response => {
             let returnedResponse = response.json();
 
-            console.log("***** in journal.service.ts *****");
-            let compareKeys = (a,b) => {
-                let aKeys = Object.keys(a).sort();
-                let bKeys = Object.keys(b).sort();
-                return JSON.stringify(aKeys).toLowerCase() === JSON.stringify(bKeys).toLowerCase();
-            };
-            let keyToCompare = new Journal();
-            console.log(keyToCompare);
-            for (let prop in returnedResponse){
-                let currentObject:Journal = <Journal>returnedResponse[prop];
+            console.log(returnedResponse);
+            /*let compareKeys = (a,b) => {
+                    let aKeys = Object.keys(a).sort();
+                    let bKeys = Object.keys(b).sort();
+                    return JSON.stringify(aKeys).toLowerCase() === JSON.stringify(bKeys).toLowerCase();
+                };
+                let keyToCompare = new Journal();
+                console.log(keyToCompare);
+                for (let prop in returnedResponse){
+                    let currentObject:Journal = <Journal>returnedResponse[prop];
                 // console.log(currentObject);
                 // console.log( compareKeys(currentObject, keyToCompare) );
                 if (compareKeys(currentObject, keyToCompare)){
                     this.JournalArr.push(currentObject);
                 }
-            }
+            }*/
 
             // console.log(this.JournalArr);
 			// console.log(response.json() as Journal[]);

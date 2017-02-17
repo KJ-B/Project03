@@ -16,11 +16,11 @@ var JournalEntry = (function () {
 }());
 exports.JournalEntry = JournalEntry;
 var JournalEntries = [
-    { id: 13, name: 'Camping' },
-    { id: 14, name: 'Beverages' },
-    { id: 16, name: 'Meals' },
-    { id: 19, name: 'Tips' },
-    { id: 10, name: 'Guide' }
+    { id: 0, name: 'this is a post with a long title' },
+    { id: 1, name: 'tester jermey' },
+    { id: 2, name: 'jjhkhkjhkjhk' },
+    { id: 3, name: 'afdadfafdadf' },
+    { id: 4, name: 'jjhkhkjhkjhk' }
 ];
 var AppComponent = (function () {
     function AppComponent() {
