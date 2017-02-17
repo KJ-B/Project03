@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Journal }   from './Journal/journal';
+import { JournalService } from './Journal/journal.service';
 
 export class JournalEntry {
 	id: number;
@@ -51,4 +52,4 @@ onSelect(journalEntry: JournalEntry): void {
 }
 	
 
-}	
+
