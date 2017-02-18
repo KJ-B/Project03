@@ -39,6 +39,7 @@ const JournalEntries: JournalEntry [] = [
   `,
 
 })
+
 export class AppComponent {
   title = 'INHABITENT JOURNAL';
   journalEntry: JournalEntry;
