@@ -10,33 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var journalentry_1 = require('./Journal/journalentry');
-var Journal = (function () {
-    function Journal() {
-    }
-    return Journal;
-}());
-exports.Journal = Journal;
-var JournalEntries = [
-    { ID: 0, title: 'this is a post with a long title' },
-    { ID: 1, title: 'tester jermey' },
-    { ID: 2, title: 'jjhkhkjhkjhk' },
-    { ID: 3, title: 'afdadfafdadf' },
-    { ID: 4, title: 'jjhkhkjhkjhk' }
-];
+var journal_service_1 = require('./Journal/journal.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(JournalService) {
+        this.JournalService = JournalService;
         this.title = 'INHABITENT JOURNAL';
         this.selectedJournalEntry = journalentry_1.JournalEntry;
     }
+    AppComponent.prototype.getJournalEntries = function () {
+        var _this = this;
+        this.JournalService.getJournals().then(function (JournalEntries) { return _this.journalEntries = JournalEntries; });
+    };
+    AppComponent.prototype.ngOnInit = function () {
+        this.getJournalEntries();
+    };
     AppComponent.prototype.onSelect = function (journalEntry) {
         this.selectedJournalEntry = journalentry_1.JournalEntry;
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <h2>My Journal Entries</h2>\n    <ul class=\"JournalEntries\">\n      <li *ngFor=\"let journalEntry of journalEntries\"\n        [class.selected]=\"journalEntry === selectedJournalEntry\"\n        (click)=\"onSelect(journalEntry)\">\n        <span class=\"badge\">{{JournalEntry.id}}</span> {{journalEntry.name}}\n      </li>\n    </ul>\n    <div *ngIf=\"selectedJournalEntry\">\n      <h2>{{selectedJournalEntry.name}} details!</h2>\n      <div><label>id: </label>{{selectedJournalEntry.name}}</div>\n      <div>\n        <label>name: </label>\n        <input [(ngModel)]=\"selectedJournalEntry.name\" placeholder=\"name\"/>\n      </div>\n    </div>\n  ",
+            template: "\n    <h1>{{title}}</h1>\n    <h2>My Heroes</h2>H\n    <ul class=\"JournalEntries\">\n      <li *ngFor=\"let journalEntry of journalEntries\"\n        [class.selected]=\"journalEntry === selectedJournalEntry\"\n        (click)=\"onSelect(journalEntry)\">\n        <span class=\"badge\">{{JournalEntry.id}}</span> {{journalEntry.name}}\n      </li>\n    </ul>\n    <journal-detail [journalEntry]=\"selectedJournalEntry\"></journal-detail>\n  ",
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [journal_service_1.JournalService])
     ], AppComponent);
     return AppComponent;
 }());

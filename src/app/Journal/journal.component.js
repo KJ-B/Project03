@@ -20,7 +20,7 @@ var JournalComponent = (function () {
     }
     JournalComponent.prototype.ngOnInit = function () {
         this.getJournals();
-        // console.log(this.journalEntries);
+        console.log(this.journalEntries);
     };
     JournalComponent.prototype.getJournals = function () {
         var _this = this;

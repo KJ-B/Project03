@@ -21,7 +21,7 @@ export class JournalComponent implements OnInit {
   ngOnInit(): void {
 
   	this.getJournals();
-    // console.log(this.journalEntries);
+     console.log(this.journalEntries);
   }
 
   getJournals(): void {

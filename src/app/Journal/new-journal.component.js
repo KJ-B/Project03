@@ -1,1 +1,0 @@
-//# sourceMappingURL=new-journal.component.js.map

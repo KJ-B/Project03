@@ -15,7 +15,7 @@ import { JournalEntry } from './journalentry';
     </div>
   `
 })
-export class JournalEntryComponent {
+export class JournalDetailComponent {
   @Input()
-  hero: Hero;
+  JournalEntry: JournalEntry;
 }
