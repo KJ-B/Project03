@@ -30,7 +30,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{title}}</h1>\n    <h2>My Heroes</h2>H\n    <ul class=\"JournalEntries\">\n      <li *ngFor=\"let journalEntry of journalEntries\"\n        [class.selected]=\"journalEntry === selectedJournalEntry\"\n        (click)=\"onSelect(journalEntry)\">\n        <span class=\"badge\">{{JournalEntry.id}}</span> {{journalEntry.name}}\n      </li>\n    </ul>\n    <journal-detail [journalEntry]=\"selectedJournalEntry\"></journal-detail>\n  ",
+            template: "\n    <h1>{{title}}</h1>\n    <h2>My Heroes</h2>H\n    <ul class=\"JournalEntries\">\n      <li *ngFor=\"let journalEntry of journalEntries\"\n        [class.selected]=\"journalEntry === selectedJournalEntry\"\n        (click)=\"onSelect(journalEntry)\">\n        <span class=\"badge\">{{JournalEntry.id}}</span> {{journalEntry.name}}\n      </li>\n    </ul>\n    <my-journal-detail [journalEntry]=\"selectedJournalEntry\"></my-journal-detail>\n  ",
+            providers: [journal_service_1.JournalService]
         }), 
         __metadata('design:paramtypes', [journal_service_1.JournalService])
     ], AppComponent);

@@ -28,8 +28,12 @@ export class JournalService {
 
 	getJournals(): Promise<Journal[]> {
         let JournalArr = "";
-		return this.http.get(this.journalUrl).toPromise()
-		.then(response => {
+        // get the data
+        let request = this.http.get(this.journalUrl);
+        console.log(request);
+        let requestAsPromise = request.toPromise();
+        console.log(requestAsPromise);
+        let taskToDoWhenWeGetPromise = response => {
             let returnedResponse = response.json();
 
             console.log(returnedResponse);
@@ -50,13 +54,14 @@ export class JournalService {
             }*/
 
             // console.log(this.JournalArr);
-			// console.log(response.json() as Journal[]);
+            // console.log(response.json() as Journal[]);
 
             console.log("***** in journal.service.ts *****");
-			// return response.json();
+            // return response.json();
             return this.JournalArr;
-		})
-		.catch(this.handleError);
+        };
+
+		return requestAsPromise.then(taskToDoWhenWeGetPromise).catch(this.handleError);
 	}
 
 	private handleError(error: any): Promise<any> {

@@ -29,8 +29,12 @@ var JournalService = (function () {
     JournalService.prototype.getJournals = function () {
         var _this = this;
         var JournalArr = "";
-        return this.http.get(this.journalUrl).toPromise()
-            .then(function (response) {
+        // get the data
+        var request = this.http.get(this.journalUrl);
+        console.log(request);
+        var requestAsPromise = request.toPromise();
+        console.log(requestAsPromise);
+        var taskToDoWhenWeGetPromise = function (response) {
             var returnedResponse = response.json();
             console.log(returnedResponse);
             /*let compareKeys = (a,b) => {
@@ -53,8 +57,8 @@ var JournalService = (function () {
             console.log("***** in journal.service.ts *****");
             // return response.json();
             return _this.JournalArr;
-        })
-            .catch(this.handleError);
+        };
+        return requestAsPromise.then(taskToDoWhenWeGetPromise).catch(this.handleError);
     };
     JournalService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only

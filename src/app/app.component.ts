@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JournalEntry }   from './Journal/journalentry';
 import { JournalService } from './Journal/journal.service';
 import { JournalEntries } from './Journal/journalentries';
+import { JournalDetailComponent } from './Journal/journal-detail.component';
 
 
 @Component({
@@ -16,10 +17,11 @@ import { JournalEntries } from './Journal/journalentries';
         <span class="badge">{{JournalEntry.id}}</span> {{journalEntry.name}}
       </li>
     </ul>
-    <journal-detail [journalEntry]="selectedJournalEntry"></journal-detail>
+    <my-journal-detail [journalEntry]="selectedJournalEntry"></my-journal-detail>
   `,
+ providers: [JournalService] 
 })
-
+ 
 
 
 export class AppComponent implements OnInit {

@@ -17,5 +17,5 @@ import { JournalEntry } from './journalentry';
 })
 export class JournalDetailComponent {
   @Input()
-  JournalEntry: JournalEntry;
+  journalEntry: JournalEntry;
 }

@@ -16,7 +16,7 @@ var JournalDetailComponent = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', journalentry_1.JournalEntry)
-    ], JournalDetailComponent.prototype, "JournalEntry", void 0);
+    ], JournalDetailComponent.prototype, "journalEntry", void 0);
     JournalDetailComponent = __decorate([
         core_1.Component({
             selector: 'my-journal-detail',
