@@ -36,7 +36,7 @@ var JournalService = (function () {
         console.log(requestAsPromise);
         var taskToDoWhenWeGetPromise = function (response) {
             var returnedResponse = response.json();
-            console.log(returnedResponse);
+            //
             /*let compareKeys = (a,b) => {
                     let aKeys = Object.keys(a).sort();
                     let bKeys = Object.keys(b).sort();

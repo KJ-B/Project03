@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions } from '@angular/http';
+import { JournalEntries } from '../Journal/journalentries';
+
 import 'rxjs/add/operator/toPromise'
 
 // model data
@@ -33,10 +35,11 @@ export class JournalService {
         console.log(request);
         let requestAsPromise = request.toPromise();
         console.log(requestAsPromise);
-        let taskToDoWhenWeGetPromise = response => {
+        let taskToDoWhenWeGetPromise = (response: any) => {
             let returnedResponse = response.json();
 
-            console.log(returnedResponse);
+            //
+
             /*let compareKeys = (a,b) => {
                     let aKeys = Object.keys(a).sort();
                     let bKeys = Object.keys(b).sort();

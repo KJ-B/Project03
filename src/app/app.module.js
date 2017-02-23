@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var journal_detail_component_1 = require('./Journal/journal-detail.component');
+var journal_service_1 = require('./Journal/journal.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -24,7 +25,9 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                journal_detail_component_1.JournalDetailComponent],
+                journal_detail_component_1.JournalDetailComponent
+            ],
+            providers: [journal_service_1.JournalService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

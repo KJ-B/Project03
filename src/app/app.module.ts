@@ -4,6 +4,7 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
 import { JournalDetailComponent } from './Journal/journal-detail.component';
+import { JournalService } from './Journal/journal.service';
 
 @NgModule({
   imports:  [
@@ -12,8 +13,10 @@ import { JournalDetailComponent } from './Journal/journal-detail.component';
   ],
   declarations: [ 
   AppComponent,
-  JournalDetailComponent],
+  JournalDetailComponent
 
+  ],
+  providers:     [ JournalService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
