@@ -8,23 +8,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+require('rxjs/add/operator/switchMap');
 var core_1 = require('@angular/core');
-var journalentry_1 = require('./journalentry');
+var router_1 = require('@angular/router');
+var common_1 = require('@angular/common');
+var journal_service_1 = require('../Journal/journal.service');
 var JournalDetailComponent = (function () {
-    function JournalDetailComponent() {
+    function JournalDetailComponent(journalEntryService, route, location) {
+        this.journalEntryService = journalEntryService;
+        this.route = route;
+        this.location = location;
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', journalentry_1.JournalEntry)
-    ], JournalDetailComponent.prototype, "journalEntry", void 0);
+    JournalDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params
+            .switchMap(function (params) { return _this.journalEntryService.getJournalEntry(+params['id']); })
+            .subscribe(function (hero) { return _this.journalEntry; });
+    };
+    JournalDetailComponent.prototype.goBack = function () {
+        this.location.back();
+    };
     JournalDetailComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-journal-detail',
-            template: "\n    <div *ngIf=\"hero\">\n      <h2>{{journalEntry.name}} details!</h2>\n      <div><label>id: </label>{{journalEntry.id}}</div>\n      <div>\n        <label>name: </label>\n        <input [(ngModel)]=\"journalEntry.name\" placeholder=\"name\"/>\n      </div>\n    </div>\n  "
+            templateUrl: '../Journal/journal.component.html',
+            styleUrls: ['../Journal.journal.component.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [journal_service_1.JournalService, router_1.ActivatedRoute, common_1.Location])
     ], JournalDetailComponent);
     return JournalDetailComponent;
 }());
 exports.JournalDetailComponent = JournalDetailComponent;
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/ 
 //# sourceMappingURL=journal-detail.component.js.map

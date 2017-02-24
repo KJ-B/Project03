@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
+// model data
 var JournalService = (function () {
     function JournalService(http) {
         this.http = http;
@@ -26,7 +27,7 @@ var JournalService = (function () {
         console.log("creating journal service");
     }
     ;
-    JournalService.prototype.getJournals = function () {
+    JournalService.prototype.getJournalEntry = function () {
         var _this = this;
         var JournalArr = "";
         // get the data

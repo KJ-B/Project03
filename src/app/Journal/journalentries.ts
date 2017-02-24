@@ -1,4 +1,5 @@
 import { JournalEntry } from './journalentry';
+import { JournalService} from './journal.service';
 
 export const JournalEntries: JournalEntry [] = [
 	{ ID: 0, title: 'this is a post with a long title' },

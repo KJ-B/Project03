@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { JournalEntry }                  from '../Journal/journalentry';
+import { JournalEntries }                from '../Journal/journalentries';
+import { Injectable }                    from '@angular/core';
 import { Headers, Http, RequestOptions } from '@angular/http';
-import { JournalEntries } from '../Journal/journalentries';
 
 import 'rxjs/add/operator/toPromise'
 
 // model data
-import { Journal } from './journal';
 
 @Injectable()
 export class JournalService {
@@ -22,13 +22,13 @@ export class JournalService {
 
     private journalUrl = this.baseJournalUrl + encodeURI(this.baseJournalParams);
 
-	private JournalArr:Journal[] = <Journal[]>[];
+	private JournalArr:JournalEntry[] = <JournalEntry[]>[];
 	
 	constructor(private http: Http) { 
 		console.log("creating journal service");
 	};
 
-	getJournals(): Promise<Journal[]> {
+	getJournalEntry(): Promise<JournalEntry[]> {
         let JournalArr = "";
         // get the data
         let request = this.http.get(this.journalUrl);

@@ -24,25 +24,7 @@ import { JournalDetailComponent } from './Journal/journal-detail.component';
  
 
 
-export class AppComponent implements OnInit {
-  title = 'INHABITENT JOURNAL';
-  journalEntries: JournalEntry[];
-  selectedJournalEntry = JournalEntry;
 
-  constructor(private JournalService: JournalService) { }
-  getJournalEntries(): void {
-    this.JournalService.getJournals().then(JournalEntries => this.journalEntries = JournalEntries);
-  }
-
-  ngOnInit(): void {
-    this.getJournalEntries();
-  }
-
-  onSelect(journalEntry: JournalEntry): void {
-    this.selectedJournalEntry = JournalEntry;
-  }
-}
-	
 
 
 

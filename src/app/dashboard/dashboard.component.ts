@@ -6,7 +6,6 @@ import { JournalService } from '../Journal/journal.service';
 @Component({
 moduleId: module.id,
 selector: 'my-dashboard',
-selector: './dashboard.component.html',
 templateUrl: '.dashboard.component.html',
 styleUrls: [ './dashboard.component.css']
 })
