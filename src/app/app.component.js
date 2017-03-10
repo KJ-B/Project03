@@ -9,31 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var journalentry_1 = require('./Journal/journalentry');
 var journal_service_1 = require('./Journal/journal.service');
 var AppComponent = (function () {
-    function AppComponent(JournalService) {
-        this.JournalService = JournalService;
-        this.title = 'INHABITENT JOURNAL';
-        this.selectedJournalEntry = journalentry_1.JournalEntry;
+    function AppComponent() {
     }
-    AppComponent.prototype.getJournalEntries = function () {
-        var _this = this;
-        this.JournalService.getJournals().then(function (JournalEntries) { return _this.journalEntries = JournalEntries; });
-    };
-    AppComponent.prototype.ngOnInit = function () {
-        this.getJournalEntries();
-    };
-    AppComponent.prototype.onSelect = function (journalEntry) {
-        this.selectedJournalEntry = journalentry_1.JournalEntry;
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             template: "\n    <h1>{{title}}</h1>\n    <h2>My Heroes</h2>H\n    <ul class=\"JournalEntries\">\n      <li *ngFor=\"let journalEntry of journalEntries\"\n        [class.selected]=\"journalEntry === selectedJournalEntry\"\n        (click)=\"onSelect(journalEntry)\">\n        <span class=\"badge\">{{JournalEntry.id}}</span> {{journalEntry.name}}\n      </li>\n    </ul>\n    <my-journal-detail [journalEntry]=\"selectedJournalEntry\"></my-journal-detail>\n  ",
             providers: [journal_service_1.JournalService]
         }), 
-        __metadata('design:paramtypes', [journal_service_1.JournalService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());

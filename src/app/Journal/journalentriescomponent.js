@@ -39,18 +39,21 @@ var JournalEntriesComponent = (function () {
     return JournalEntriesComponent;
 }());
 exports.JournalEntriesComponent = JournalEntriesComponent;
-ngOnInit();
-void {
-    this: .getHeroes()
-};
-onSelect(hero, Hero);
-void {
-    this: .selectedHero = hero
-};
-gotoDetail();
-void {
-    this: .router.navigate(['/detail', this.selectedJournalEntry.id])
-};
+/*
+  ngOnInit(): void {
+    this.getHeroes();
+  }
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
+
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedJournalEntry.id]);
+  } s
+
+
+
 /*
 Copyright 2017 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

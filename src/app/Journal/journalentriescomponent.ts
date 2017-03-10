@@ -4,12 +4,13 @@ import { Router } from '@angular/router';
 import { JournalEntry } from '../Journal/journalentry';
 import { JournalService } from '../Journal/journal.service';
 
-@Component({
+@Component ({ 
   moduleId: module.id,
   selector: 'my-journalentries',
   templateUrl: './journalentries.component.html',
   styleUrls: [ './journalentries.component.css' ]
 })
+
 export class JournalEntriesComponent implements OnInit {
   JournalEntries: JournalEntry[];
   selectedJournalEntry: JournalEntry;
@@ -32,7 +33,7 @@ export class JournalEntriesComponent implements OnInit {
   }
 }
   
-
+/*
   ngOnInit(): void {
     this.getHeroes();
   }
@@ -43,8 +44,8 @@ export class JournalEntriesComponent implements OnInit {
 
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedJournalEntry.id]);
-  }
-}
+  } s
+
 
 
 /*

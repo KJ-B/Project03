@@ -689,7 +689,7 @@ a:active, a:hover {
 }
 
 .site-header h1 {
-    background: url(./images/inhabitent-logo-tent.svg) no-repeat;
+    background: url(/images/inhabitent-logo-tent.svg) no-repeat;
     background-size: 50px 33px;
     height: 33px;
     margin: 0;
@@ -1683,7 +1683,7 @@ body:not(.home):not(.page-template-about):not(.post-type-archive):not(.tax-produ
 }
 
 .site-footer {
-    background: url(Specs/images/dark-wood.png);
+    background: url(images/dark-wood.png);
     background-size: 512px 512px;
     color: #fff
 }

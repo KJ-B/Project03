@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
 
 import { JournalEntry } from '../Journal/journalentries';
 import { JournalService } from '../Journal/journal.service';
@@ -9,7 +9,7 @@ selector: 'my-dashboard',
 templateUrl: '.dashboard.component.html',
 styleUrls: [ './dashboard.component.css']
 })
-export class DashboardComponent implement OnInit {
+/*export class DashboardComponent implement OnInit {
   
   journalEntries: JournalEntry[] = [];
   

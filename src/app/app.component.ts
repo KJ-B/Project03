@@ -19,8 +19,13 @@ import { JournalDetailComponent } from './Journal/journal-detail.component';
     </ul>
     <my-journal-detail [journalEntry]="selectedJournalEntry"></my-journal-detail>
   `,
- providers: [JournalService] 
+ providers: [JournalService]
 })
+export class AppComponent{
+  
+}
+
+
  
 
 
