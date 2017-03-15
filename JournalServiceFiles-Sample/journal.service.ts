@@ -26,7 +26,7 @@ export class JournalService {
 		console.log("creating journal service");
 	};
 
-	getJournals(): Promise<Journal[]> {
+	getJournals(): Promise <Journal[]> {
 		return this.http.get(this.journalUrl).toPromise()
 		.then(response => {
             let returnedResponse = response.json();
@@ -58,7 +58,7 @@ export class JournalService {
 		.catch(this.handleError);
 	}
 
-	private handleError(error: any): Promise<any> {
+	private handleError(error: any): Promise <any> {
     	console.error('An error occurred', error); // for demo purposes only
     	return Promise.reject(error.message || error);
     }
