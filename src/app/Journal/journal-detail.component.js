@@ -22,8 +22,8 @@ var JournalDetailComponent = (function () {
     }
     JournalDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params
-            .switchMap(function (params) { return _this.getJournalEntry(+params['id']); })
+        this.route.params.
+            .switchMap(function (params) { return _this.JournalService.journalEntry(+params['id']); })
             .subscribe(function (journalEntry) { return _this.journalEntry = journalentry_1.JournalEntry; });
     };
     JournalDetailComponent.prototype.goBack = function () {
