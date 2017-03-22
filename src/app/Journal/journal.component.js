@@ -25,7 +25,7 @@ var JournalComponent = (function () {
     JournalComponent.prototype.getJournals = function () {
         var _this = this;
         console.log('getting journals');
-        var myPromiseOfJournals = this.journalService.getJournals();
+        var myPromiseOfJournals = this.journalService.getJournalEntry();
         myPromiseOfJournals.then(function (journals) {
             _this.journalEntries = journals;
             console.log("***** in journal.component.ts callback *****");

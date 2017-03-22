@@ -26,7 +26,7 @@ export class JournalComponent implements OnInit {
 
   getJournals(): void {
     console.log('getting journals');
-    let myPromiseOfJournals:Promise<Journal[]> = this.journalService.getJournals();
+    let myPromiseOfJournals:Promise<Journal[]> = this.journalService.getJournalEntry();
 
     myPromiseOfJournals.then(
   	    journals => {

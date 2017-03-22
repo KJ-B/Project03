@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { Headers, Http, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise'
 
@@ -14,7 +14,7 @@ export class JournalService {
 	/* backup URL to use below */
 	// private journalUrl = 'http://localhost:4200/sample-journal-data.json';
 
-    private baseAPIKey = `94a08da1fecbb6e8b46990538c7b50b2`;
+    /*private baseAPIKey = `94a08da1fecbb6e8b46990538c7b50b2`;
     private baseJournalUrl = `http://portal.helloitscody.com/inhabitent/api/get/${this.baseAPIKey}/?`;
     private baseJournalParams = `params=[{"name":"posts_per_page","value":"5"},{"name":"paged","value":"1"}]`;
 
@@ -63,4 +63,4 @@ export class JournalService {
     	return Promise.reject(error.message || error);
     }
 
-}
+} */

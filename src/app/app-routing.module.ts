@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardComponent }  from './Dashboard/dashboard.component';
+import { DashboardComponent }  from './dashboard/dashboard.component';
 import { JournalEntriesComponent } from './Journal/journalentries';
 import { JournalDetailComponent } from './Journal/journal.service';
 

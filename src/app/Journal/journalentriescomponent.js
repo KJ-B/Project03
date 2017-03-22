@@ -10,26 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var journalentry_1 = require('../Journal/journalentry');
 var journal_service_1 = require('../Journal/journal.service');
 var JournalEntriesComponent = (function () {
-    function JournalEntriesComponent(router, Service) {
+    function JournalEntriesComponent(router, service) {
         this.router = router;
-        this.Service = Service;
+        this.service = service;
     }
     JournalEntriesComponent.prototype.getJournalEntries = function () {
         var _this = this;
-        this.JournalService.getJournals().then(function (JournalEntries) { return _this.journalEntries = JournalEntries; });
+        this.service.getJournalEntry().then(function (JournalEntries) { return _this.journalEntries = JournalEntries; });
     };
     JournalEntriesComponent.prototype.ngOnInit = function () {
         this.getJournalEntries();
     };
     JournalEntriesComponent.prototype.onSelect = function (journalEntry) {
-        this.selectedJournalEntry = journalentry_1.JournalEntry;
+        this.selectedJournalEntry = journalEntry;
     };
     JournalEntriesComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'my-journalentries',
             templateUrl: './journalentries.component.html',
             styleUrls: ['./journalentries.component.css']
@@ -40,20 +38,10 @@ var JournalEntriesComponent = (function () {
 }());
 exports.JournalEntriesComponent = JournalEntriesComponent;
 /*
-  ngOnInit(): void {
-    this.getHeroes();
-  }
-
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
-
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedJournalEntry.id]);
-  } s
-
-
-
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
 /*
 Copyright 2017 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

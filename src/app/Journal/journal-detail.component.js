@@ -15,15 +15,15 @@ var common_1 = require('@angular/common');
 var journalentry_1 = require('../Journal/journalentry');
 var journal_service_1 = require('../Journal/journal.service');
 var JournalDetailComponent = (function () {
-    function JournalDetailComponent(journalEntryService, route, location) {
-        this.journalEntryService = journalEntryService;
+    function JournalDetailComponent(journalService, route, location) {
+        this.journalService = journalService;
         this.route = route;
         this.location = location;
     }
     JournalDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params.
-            .switchMap(function (params) { return _this.JournalService.journalEntry(+params['id']); })
+        this.route.params
+            .switchMap(function (params) { return _this.journalService.getjournalEntry(+params['id']); })
             .subscribe(function (journalEntry) { return _this.journalEntry = journalentry_1.JournalEntry; });
     };
     JournalDetailComponent.prototype.goBack = function () {
@@ -31,7 +31,6 @@ var JournalDetailComponent = (function () {
     };
     JournalDetailComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
             selector: 'my-journal-detail',
             templateUrl: '../Journal/journal-detail.component.html',
             styleUrls: ['../Journal.journal-detail.component.css']
@@ -41,6 +40,16 @@ var JournalDetailComponent = (function () {
     return JournalDetailComponent;
 }());
 exports.JournalDetailComponent = JournalDetailComponent;
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+/*
+Copyright 2017 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
 /*
 Copyright 2017 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
