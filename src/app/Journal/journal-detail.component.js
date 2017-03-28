@@ -12,7 +12,6 @@ require('rxjs/add/operator/switchMap');
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
-var journalentry_1 = require('../Journal/journalentry');
 var journal_service_1 = require('../Journal/journal.service');
 var JournalDetailComponent = (function () {
     function JournalDetailComponent(journalService, route, location) {
@@ -23,8 +22,8 @@ var JournalDetailComponent = (function () {
     JournalDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params
-            .switchMap(function (params) { return _this.journalService.getjournalEntry(+params['id']); })
-            .subscribe(function (journalEntry) { return _this.journalEntry = journalentry_1.JournalEntry; });
+            .switchMap(function (params) { return _this.journalService.getJournalEntry(+params['id']); });
+        //.subscribe (journalEntry => this.journalEntry = JournalEntry);    
     };
     JournalDetailComponent.prototype.goBack = function () {
         this.location.back();

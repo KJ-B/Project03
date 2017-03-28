@@ -27,7 +27,7 @@ var JournalService = (function () {
         console.log("creating journal service");
     }
     ;
-    JournalService.prototype.getJournalEntry = function () {
+    JournalService.prototype.getJournalEntry = function (id) {
         var _this = this;
         var JournalArr = "";
         // get the data

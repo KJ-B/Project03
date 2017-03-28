@@ -11,13 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
-var journalentries_1 = require('./Journal/journalentries');
-var journal_service_1 = require('./Journal/journal.service');
+var journalentriescomponent_1 = require('./Journal/journalentriescomponent');
+var journal_detail_component_1 = require('./Journal/journal-detail.component');
 var routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
-    { path: 'detail/:id', component: journal_service_1.JournalDetailComponent },
-    { path: 'journalEntries', component: journalentries_1.JournalEntriesComponent },
+    { path: 'detail/:id', component: journal_detail_component_1.JournalDetailComponent },
+    { path: 'journalEntries', component: journalentriescomponent_1.JournalEntriesComponent },
 ];
 var AppModule = (function () {
     function AppModule() {

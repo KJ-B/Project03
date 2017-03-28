@@ -9,23 +9,20 @@ import { JournalDetailComponent } from './Journal/journal-detail.component';
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <h2>My Heroes</h2>H
-    <ul class="JournalEntries">
-      <li *ngFor="let journalEntry of journalEntries"
-        [class.selected]="journalEntry === selectedJournalEntry"
-        (click)="onSelect(journalEntry)">
-        <span class="badge">{{JournalEntry.id}}</span> {{journalEntry.name}}
-      </li>
-    </ul>
-    <my-journal-detail [journalEntry]="selectedJournalEntry"></my-journal-detail>
+    <nav>
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/heroes" routerLinkActifve="active">JournalEntries</a>
+    </nav>
+    <router-outlet></router-outlet>
   `,
- providers: [JournalService]
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent{
-  
+export class AppComponent {
+  titlte = 'Inhabitent Journal Entries';
 }
 
 
+ 
  
 
 

@@ -22,8 +22,8 @@ export class JournalDetailComponent implements OnInit {
 
     ngOnInit(): void {
       this.route.params
-        .switchMap((params: Params) => this.journalService.getjournalEntry(+params['id']))
-        .subscribe (journalEntry => this.journalEntry = JournalEntry);    
+        .switchMap((params: Params) => this.journalService.getJournalEntry(+params['id']))
+        //.subscribe (journalEntry => this.journalEntry = JournalEntry);    
     }
     goBack(): void {
       this.location.back();

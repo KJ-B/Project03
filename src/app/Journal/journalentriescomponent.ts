@@ -16,10 +16,10 @@ export class JournalEntriesComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private service: JournalService) { }
+    private journalService: JournalService) { }
  
   getJournalEntries(): void {
-    this.service.getJournalEntry().then(JournalEntries => this.journalEntries = JournalEntries);
+    //this.journalService.getJournalEntries().then(journalEntries => this.journalEntries = JournalEntries);
   }
 
   ngOnInit(): void {
@@ -29,8 +29,13 @@ export class JournalEntriesComponent implements OnInit {
   onSelect(journalEntry: JournalEntry): void {
     this.selectedJournalEntry = journalEntry;
   }
+
+  gotoDetail(): void {
+ //  this.router.navigate('[/detail'], this.selectedJournalEntry.id);
+  }
 }
   
+
 
 
 

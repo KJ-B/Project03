@@ -12,19 +12,21 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var journal_service_1 = require('../Journal/journal.service');
 var JournalEntriesComponent = (function () {
-    function JournalEntriesComponent(router, service) {
+    function JournalEntriesComponent(router, journalService) {
         this.router = router;
-        this.service = service;
+        this.journalService = journalService;
     }
     JournalEntriesComponent.prototype.getJournalEntries = function () {
-        var _this = this;
-        this.service.getJournalEntry().then(function (JournalEntries) { return _this.journalEntries = JournalEntries; });
+        //this.journalService.getJournalEntries().then(journalEntries => this.journalEntries = JournalEntries);
     };
     JournalEntriesComponent.prototype.ngOnInit = function () {
         this.getJournalEntries();
     };
     JournalEntriesComponent.prototype.onSelect = function (journalEntry) {
         this.selectedJournalEntry = journalEntry;
+    };
+    JournalEntriesComponent.prototype.gotoDetail = function () {
+        //  this.router.navigate('[/detail'], this.selectedJournalEntry.id);
     };
     JournalEntriesComponent = __decorate([
         core_1.Component({

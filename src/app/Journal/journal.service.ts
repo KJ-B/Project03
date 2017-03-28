@@ -28,7 +28,7 @@ export class JournalService {
 		console.log("creating journal service");
 	};
 
-	getJournalEntry(): Promise<JournalEntry[]> {
+	getJournalEntry(id:number): Promise<JournalEntry[]> {
         let JournalArr = "";
         // get the data
         let request = this.http.get(this.journalUrl);
